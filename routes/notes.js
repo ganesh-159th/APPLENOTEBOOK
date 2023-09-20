@@ -79,7 +79,7 @@ router.put("/updatenote/:id", fetchuser, async (req, res) => {
     note = await Note.findByIdAndUpdate(
       req.params.id,
       { $set: newNote },
-      { new: true }
+      { new: true }``
     );
     res.json({ note });
   } catch (error) {
@@ -90,7 +90,7 @@ router.put("/updatenote/:id", fetchuser, async (req, res) => {
 //ROUTE:4  delete the existing the content "api/note/deletenote"
 
 router.delete("/deletenote/:id", fetchuser, async (req, res) => {
-  const { title, description, tag } = req.body;
+
   try {
     // find the note nto be update and  deleteted
 
